@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Expresso Oriente",
+        "price_confort": "R$ 205.10",
+        "price_econ": "R$ 121.50",
+        "city": "São Paulo",
+        "duration": "12h",
+        "seat": "1A",
+        "bed": "4D"
+    },
+    {
+        "id": 2,
+        "name": "Expresso Ocidente",
+        "price_confort": "R$ 410.20",
+        "price_econ": "R$ 243.00",
+        "city": "Rio De Janeiro",
+        "duration": "16h",
+        "seat": "2B",
+        "bed": "5C"
+    }
+]
