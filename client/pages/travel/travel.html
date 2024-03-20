@@ -14,27 +14,43 @@
         <img src="../../images/logo.png" class="mobileMenuLogo">
         <img src="../../images/menu.png" class="mobileMenuOpener">
     </nav>
-    <div class="container">
+    <div class="container" id = "app">
         <nav class="lateralMenu">
             <img src="../../images/logo.png" class="logoImg">
             <div class="option">
                 <img src="../../images/calculator.png">
-                <h4 class = "label">Calculadora de Viagem</h4>
+                <h4 class="label">Calculadora de Viagem</h4>
             </div>
         </nav>
         <main class="travelCalculatorBox">
-            <section class = "travelCalculator">
-                <div class = "travelTitle">
+            <div class="travelCalculator">
+                <div class="travelTitle">
                     <img src="../../images/truck.png" class="icon">
-                    <h3 class = "title">Calculadora de Viagem</h4>
-                </div> 
-            </section>
+                    <h3 class="title">Calculadora de Viagem</h4>
+                </div>
+                <section class="travelSelectorBox">
+                    <div class="travelValues">
+                        <div class="calculateTravelTitle">
+                            <img src="../../images//hand.png" class="icon travelBoxIcon">
+                            <h4>Calcule o valor da Viagem</h4>
+                        </div>
+                        <label>Destino</label>
+                        <input v-model="destination" placeholder="Selecione o destino"></input>
+                        <label>Data</label>
+                        <input v-model="date" placeholder="Selecione uma data"></input>
+                        <standart-button button-label="Buscar"></standart-button>
+                    </div>
+                    <div class="travelResults">
+
+                    </div>
+                </section>
+            </div>
         </main>
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/vue@3.2.20"></script>
-    <script type="module" src="script.js"></script>
+    <script type="module" src="travel.js"></script>
 </body>
 
 </html>
