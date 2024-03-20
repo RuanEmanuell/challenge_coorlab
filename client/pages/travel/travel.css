@@ -1,0 +1,96 @@
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: white;
+}
+
+.lateralMenu{
+    width: clamp(140px, 100%, 280px);
+    height: 100%;
+    background-color: rgb(48, 52, 68);
+}
+
+.mobileMenu{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(48, 52, 68);
+    display: none;
+    justify-content: space-between;
+}
+
+.mobileMenu img{
+    margin: auto 10px;
+}
+
+.mobileMenuLogo{
+    width: clamp(50px, 25%, 150px);
+    height: auto;
+}
+
+.mobileMenuOpener{
+    width: 35px;
+    height: 25px;
+}
+
+.option{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.option img{
+    width: 50%;
+    margin: auto;
+}
+
+.label{
+    color: white;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.travelCalculatorBox{
+    width: 100%;
+    height: 100%;
+    max-width: 1280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.travelCalculator{
+    width: 90%;
+    height: 66%;
+    min-width: 280px;
+    min-height: 280px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.219);
+    display: flex;
+    flex-direction: column;
+}
+
+.travelTitle{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(48, 52, 68);
+    display: flex;
+}
+
+.icon{
+    margin: auto 20px;
+    width: 30px;
+    height: auto;
+}
+
+.title{
+    color: white;
+}
+
+@media (max-width: 768px){
+    .lateralMenu{
+        display: none;
+    }
+    .mobileMenu{
+        display: flex;
+    }
+}

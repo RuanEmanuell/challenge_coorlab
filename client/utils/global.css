@@ -1,0 +1,38 @@
+:root {
+    color-scheme: only light;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: rgb(48, 52, 68);
+    margin: 0;
+    height: 100%;
+    min-width: 320px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.logoImg {
+    margin: 20px;
+    width: clamp(150px, 10%, 300px);
+    height: auto;
+}
+
+.standartButton {
+    color: rgb(48, 52, 68);
+    background-color: #08acb4;
+    border: none;
+    border-radius: 5px;
+    padding: 7.5px 50px;
+    font-weight: bold;
+    margin: 10px;
+    transition: 0.2s all;
+}
+
+.standartButton:hover {
+    cursor: pointer;
+    color: white;
+    background-color: rgb(48, 52, 68);
+}

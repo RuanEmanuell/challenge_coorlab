@@ -4,26 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../../utils/global.css">
+    <link rel="stylesheet" href="login.css">
     <title>Coorlab Challenge</title>
 </head>
 
 <body>
-    <img src="images/logo.png" class="logoImg">
+    <img src="../../images/logo.png" class="logoImg">
     <div class="container" id="app">
         <form class="loginBox">
             <h1 class="title">Login</h1>
             <label>Email</label>
-            <input type="email" placeholder="Digite seu email..."></input>
+            <input type="email" v-model="email" placeholder="Digite seu email..."></input>
             <label>Senha</label>
-            <input type="password" placeholder="Digite sua senha..."></input>
-            <standart-button button-label="Fazer Login"></standart-button>
+            <input type="password" v-model="password" placeholder="Digite sua senha..."></input>
+            <standart-button button-label="Fazer Login" @click="testingValues()"></standart-button>
             <a href="register.html" class="subtitle">Ainda não tem uma conta? Criar uma conta</a>
         </form>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@3.2.20"></script>
-    <script type="module" src="script.js"></script>
+    <script type="module" src="../../utils/components.js"></script>
+    <script type="module" src="login.js"></script>
 </body>
 
 </html>
