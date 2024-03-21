@@ -33,7 +33,7 @@ input {
     border-radius: 2px;
 }
 
-input[placeholder]{
+input[placeholder] {
     padding: 10px;
 }
 
@@ -52,4 +52,14 @@ input[placeholder]{
 .standartButton:hover {
     color: white;
     background-color: rgb(48, 52, 68);
+}
+
+dialog {
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.178);
+    border: none;
 }

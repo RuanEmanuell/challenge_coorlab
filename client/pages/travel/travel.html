@@ -35,23 +35,72 @@
                             <h4>Calcule o valor da Viagem</h4>
                         </div>
                         <label>Destino</label>
-                        <div class="destinationSelect" v-model="destination" @click = "showDestinations()">
+                        <div class="destinationSelect" @click="showDestinations()">
                             <p>{{selectedDestination != "" ? selectedDestination : "Selecione um destino"}}</p>
                             <p>></p>
                         </div>
-                        <div class="destinationOption" v-for="destination in destinations" @click = "selectDestination(destination)">
-                            <h4>{{destination.city}}</h4>
+                        <div class="destinationOptionsBox">
+                            <div class="destinationOption" v-for="destination in uniqueDestinations"
+                                @click="selectDestination(destination)">
+                                <h4>{{destination}}</h4>
+                            </div>
                         </div>
                         <label>Data</label>
-                        <input v-model="date" placeholder="Selecione uma data"></input>
-                        <standart-button button-label="Buscar"></standart-button>
+                        <input type="date" v-model="selectedDate">
+                        <standart-button button-label="Buscar" @click="verifyFields()"></standart-button>
                     </div>
-                    <div class="travelResults">
-
+                    <div class="travelResults" @click="closeDestinations()">
+                        <template v-if="!bestTravelC && !bestTravelE">
+                            <h1 class="noData">Nenhum dado selecionado</h1>
+                        </template>
+                        <template v-else>
+                            <div class="travelOptionsBox">
+                                <p>Estas são as melhores alternativas de viagem para a data selecionada</p>
+                                <div class="travelOptions">
+                                    <div class="travelOption">
+                                        <div class="travelOptionImgBox">
+                                            <img src="../../images/hand.png">
+                                        </div>
+                                        <section>
+                                            <h4>{{bestTravelC.name}}</h4>
+                                            <p>Leito: {{bestTravelC.bed}}</p>
+                                            <p>Tempo estimado: {{bestTravelC.duration}}</p>
+                                        </section>
+                                        <section>
+                                            <h4>Preço</h4>
+                                            <p>{{bestTravelC.price_confort}}</p>
+                                        </section>
+                                    </div>
+                                    <div class="travelOption">
+                                        <div class="travelOptionImgBox">
+                                            <img src="../../images/hand.png">
+                                        </div>
+                                        <section>
+                                            <h4>{{bestTravelE.name}}</h4>
+                                            <p>Poltrona: {{bestTravelE.seat}}</p>
+                                            <p>Tempo estimado: {{bestTravelE.duration}}</p>
+                                        </section>
+                                        <section>
+                                            <h4>Preço</h4>
+                                            <p>{{bestTravelE.price_econ}}</p>
+                                        </section>
+                                    </div>
+                                    <standart-button button-label="Limpar" button-color="#f0a335"
+                                        @click="clearAllValues()"></standart-button>
+                                </div>
+                            </div>
+                        </template>
                     </div>
                 </section>
             </div>
         </main>
+        <dialog>
+            <div class="insertValuesMessageBox">
+                <img src="../../images/exclamation.png">
+                <h1>Insira os valores para realizar a cotação.</h1>
+                <standart-button button-label="Fechar" @click="closeDialog()"></standart-button>
+            </div>
+        </dialog>
     </div>
 
 
