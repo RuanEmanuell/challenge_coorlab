@@ -11,14 +11,18 @@ const app = Vue.createApp({
     methods: {
         testingValues() {
             document.location.href = "../travel/travel.html";
-        }
+        },
+        preventPageReload() {
+            document.querySelector("form").addEventListener("submit", function (event) {
+                event.preventDefault();
+            });
+        },
+    },
+    mounted: function () {
+        this.preventPageReload();
     }
 });
 
 app.component('standart-button', StandardButton);
 
 app.mount('#app');
-
-document.querySelector("form").addEventListener("submit", function (event) {
-    event.preventDefault();
-});

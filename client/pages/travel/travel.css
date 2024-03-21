@@ -1,17 +1,17 @@
-.container{
+.container {
     width: 100%;
     height: 100%;
     display: flex;
     background-color: white;
 }
 
-.lateralMenu{
+.lateralMenu {
     width: clamp(140px, 100%, 280px);
     height: 100%;
     background-color: rgb(48, 52, 68);
 }
 
-.mobileMenu{
+.mobileMenu {
     width: 100%;
     height: 60px;
     background-color: rgb(48, 52, 68);
@@ -19,38 +19,38 @@
     justify-content: space-between;
 }
 
-.mobileMenu img{
+.mobileMenu img {
     margin: auto 10px;
 }
 
-.mobileMenuLogo{
+.mobileMenuLogo {
     width: clamp(50px, 25%, 150px);
     height: auto;
 }
 
-.mobileMenuOpener{
+.mobileMenuOpener {
     width: 35px;
     height: 25px;
 }
 
-.option{
+.option {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 4fr;
 }
 
-.option img{
+.option img {
     width: 50%;
     margin: auto;
 }
 
-.label{
+.label {
     color: white;
     margin-right: 10px;
     text-align: center;
 }
 
-.travelCalculatorBox{
+.travelCalculatorBox {
     width: 100%;
     height: 100%;
     max-width: 1280px;
@@ -60,7 +60,7 @@
     margin: auto;
 }
 
-.travelCalculator{
+.travelCalculator {
     width: 90%;
     height: 66%;
     min-width: 280px;
@@ -70,24 +70,24 @@
     flex-direction: column;
 }
 
-.travelTitle{
+.travelTitle {
     width: 100%;
     height: 50px;
     background-color: rgb(48, 52, 68);
     display: flex;
 }
 
-.icon{
+.icon {
     margin: auto 20px;
     width: 40px;
     height: auto;
 }
 
-.title{
+.title {
     color: white;
 }
 
-.travelSelectorBox{
+.travelSelectorBox {
     display: grid;
     grid-template-columns: 5fr 6fr;
     height: 100%;
@@ -95,7 +95,7 @@
     color: rgb(48, 52, 68);
 }
 
-.travelValues{
+.travelValues {
     height: 100%;
     background-color: #f8f4f4;
     display: flex;
@@ -104,43 +104,82 @@
     flex-direction: column;
 }
 
-.calculateTravelTitle{
+.calculateTravelTitle {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
 }
 
-.calculateTravelTitle .icon{
+.calculateTravelTitle .icon {
     margin: auto 5px;
 }
 
+.destinationSelect{
+    background-color: white;
+    width: 66%;
+    border: 1px solid rgb(236, 236, 236);
+    border-radius: 2px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+}
 
-@media (max-width: 960px){
-    .lateralMenu{
+.destinationSelect p{
+    color: rgb(82, 82, 82);
+    font-size: small;
+}
+
+.destinationOption {
+    font-weight: bold;
+    background-color: white;
+    width: 66%;
+    padding: 10px;
+    margin: 0;
+    border-top: 1px solid rgba(48, 52, 68, 0.349);
+    display: none;
+    cursor: pointer;
+}
+
+.destinationOption:hover{
+    background-color: rgb(48, 52, 68);
+    color: white;
+}
+
+.destinationOption h4 {
+    margin: 0 5px;
+}
+
+
+@media (max-width: 960px) {
+    .lateralMenu {
         display: none;
     }
-    .mobileMenu{
+
+    .mobileMenu {
         display: flex;
     }
-    .travelSelectorBox{
+
+    .travelSelectorBox {
         grid-template-columns: 1fr;
     }
-    .travelCalculator{
+
+    .travelCalculator {
         height: 95%;
     }
 }
 
-@media (max-width: 480px){
-    .title{
+@media (max-width: 480px) {
+    .title {
         font-size: medium;
         text-align: center;
     }
-    .icon{
+
+    .icon {
         width: 30px;
     }
-    .calculateTravelTitle h4{
+
+    .calculateTravelTitle h4 {
         font-size: small;
     }
 }
-

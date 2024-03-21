@@ -4,7 +4,7 @@ import json
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/travel")
 @cross_origin()
 def helloWord():
     with open("data.json") as file:

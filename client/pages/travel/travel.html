@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
         <img src="../../images/logo.png" class="mobileMenuLogo">
         <img src="../../images/menu.png" class="mobileMenuOpener">
     </nav>
-    <div class="container" id = "app">
+    <div class="container" id="app">
         <nav class="lateralMenu">
             <img src="../../images/logo.png" class="logoImg">
             <div class="option">
@@ -35,7 +35,13 @@
                             <h4>Calcule o valor da Viagem</h4>
                         </div>
                         <label>Destino</label>
-                        <input v-model="destination" placeholder="Selecione o destino"></input>
+                        <div class="destinationSelect" v-model="destination" @click = "showDestinations()">
+                            <p>{{selectedDestination != "" ? selectedDestination : "Selecione um destino"}}</p>
+                            <p>></p>
+                        </div>
+                        <div class="destinationOption" v-for="destination in destinations" @click = "selectDestination(destination)">
+                            <h4>{{destination.city}}</h4>
+                        </div>
                         <label>Data</label>
                         <input v-model="date" placeholder="Selecione uma data"></input>
                         <standart-button button-label="Buscar"></standart-button>
