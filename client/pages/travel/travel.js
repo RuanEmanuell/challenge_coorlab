@@ -13,7 +13,7 @@ const app = Vue.createApp({
     },
     methods: {
         async getData() {
-            const response = await fetch("http://localhost:5000/travel");
+            const response = await fetch("http://localhost:3000/travel");
             const data = await response.json();
             this.destinations = data["transport"];
 

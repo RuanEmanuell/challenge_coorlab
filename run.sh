@@ -1,13 +1,19 @@
 #!/bin/bash
 
+pip install python-dotenv
 pip install Flask
-
 pip install Flask-Cors
 
-cd server
+cd server/data
+flask --app server run &
+cd ..
 
-flask --app server run
+sleep 2
 
-sleep 1
+cd files
+flask --app static run &
 
-xdg-open http://localhost:5000/client/pages/login/index.html
+sleep 2
+
+xdg-open http://localhost:8080/client/pages/login/index.html
+
