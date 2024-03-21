@@ -137,11 +137,10 @@
 
 .destinationOptionsBox {
     width: 100%;
-    height: auto;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
+    height: 7.5em;
     overflow-y: auto;
 }
 
@@ -152,7 +151,6 @@
     padding: 10px;
     margin: 0;
     border-top: 1px solid rgba(48, 52, 68, 0.349);
-    display: none;
     cursor: pointer;
 }
 
@@ -237,6 +235,7 @@ input {
 .travelOptionImgBox img {
     width: 50%;
     margin: auto;
+    filter: invert(100%);
 }
 
 .travelOptions button {

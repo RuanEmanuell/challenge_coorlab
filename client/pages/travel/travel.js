@@ -33,20 +33,14 @@ const app = Vue.createApp({
             return uniqueArray;
         },
         showDestinations() {
-            const options = document.querySelectorAll(".destinationOption");
-            for (let i = 0; i < options.length; i++) {
-                options[i].style.display = "flex";
-            }
+            document.querySelector(".destinationOptionsBox").style.display = "flex";
         },
         selectDestination(destination) {
             this.selectedDestination = destination;
             this.closeDestinations();
         },
         closeDestinations() {
-            const options = document.querySelectorAll(".destinationOption");
-            for (let i = 0; i < options.length; i++) {
-                options[i].style.display = "none";
-            }
+            document.querySelector(".destinationOptionsBox").style.display = "none";
         },
         verifyFields() {
             if (this.selectedDate && this.selectedDestination != "") {
@@ -74,6 +68,7 @@ const app = Vue.createApp({
     },
     mounted: function () {
         this.getData();
+        this.closeDestinations();
     }
 });
 
