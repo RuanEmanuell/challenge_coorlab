@@ -3,7 +3,7 @@
 ## Challenge_Coorlab
 
 ### What is this? 🤔 
-This project is a VueJS / Python application to identify the best possible travel options, made as a challenge. You can learn more about in on the <a href="result.md">result file</a> and on <a href="https://devblog-ruan.vercel.app/post/2?language=English">my blog</a>
+This project is a VueJS / Python application to identify the best possible travel options, made as a challenge. You can learn more about in on the <a href="RESULT.md">result file</a> and on <a href="https://devblog-ruan.vercel.app/post/2?language=English">my blog</a>
 
 ### Where can I acess it? 🖥
 You need to download the files of this repository.

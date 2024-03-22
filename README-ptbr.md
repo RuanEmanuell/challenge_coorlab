@@ -3,7 +3,7 @@
 ## Desafio_Coorlab
 
 ### O que é isso? 🤔
-Esse projeto é uma aplicação VueJS / Python para identificar as melhores opções de viagens, feito como um desafio. Você pode aprender mais sobre isso no <a href="result.md">arquivo de resultado</a> e no <a href="https://devblog-ruan.vercel.app/post/2?language=English">meu blog</a>.
+Esse projeto é uma aplicação VueJS / Python para identificar as melhores opções de viagens, feito como um desafio. Você pode aprender mais sobre isso no <a href="RESULT.md">arquivo de resultado</a> e no <a href="https://devblog-ruan.vercel.app/post/2?language=English">meu blog</a>.
 
 ### Onde posso acessá-lo? 🖥
 Você precisa baixar os arquivos que estão disponíveis nesse repositório.
