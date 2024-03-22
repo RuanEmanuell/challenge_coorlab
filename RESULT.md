@@ -33,13 +33,15 @@ Eu testei ele no meu computador pessoal (Linux Mint Cinnamon) após desinstalar 
 ![ubuntutest](https://github.com/RuanEmanuell/devblog/assets/113607857/27feb35d-95fe-4b1f-855d-2128831420f7)
 ![ubuntutestwin](https://github.com/RuanEmanuell/devblog/assets/113607857/ed1291c3-00c6-4e87-90c9-a890f213343e)
 
+Eu escrevi mais sobre o desenvolvimento dele <a href="https://devblog-ruan.vercel.app/post/2?language=English">no meu blog</a>, se for de seu interesse.
+
 
 
 # Implementation Details - English
 
 ## Front End (VueJS):
 
-In the front end, VueJS 3 was used, imported as a CDN since the idea was to build a relatively simple web app.
+In the front end, VueJS 3 was used, imported as a CDN since the idea was to build a relatively simple web app. 
 
 I started by creating the login screen, as it was mentioned in the proposed story, but there is no user authentication or similar features. When clicking the button on both the registration and login screens, you are directly redirected to the main screen.
 
@@ -69,3 +71,5 @@ I tested it on my personal computer (Linux Mint Cinnamon) after uninstalling the
 
 ![ubuntutest](https://github.com/RuanEmanuell/devblog/assets/113607857/27feb35d-95fe-4b1f-855d-2128831420f7)
 ![ubuntutestwin](https://github.com/RuanEmanuell/devblog/assets/113607857/ed1291c3-00c6-4e87-90c9-a890f213343e)
+
+I wrote more about it's development <a href="https://devblog-ruan.vercel.app/post/2?language=English">on my blog</a>, if it is in your interest.

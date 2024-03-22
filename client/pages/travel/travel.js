@@ -13,15 +13,19 @@ const app = Vue.createApp({
     },
     methods: {
         async getData() {
-            const response = await fetch("http://localhost:3000/travel");
-            const data = await response.json();
-            this.destinations = data["transport"];
-
-            let uniqueDestinationsFilter = [];
-            for (let i = 0; i < this.destinations.length; i++) {
-                uniqueDestinationsFilter.push(this.destinations[i]["city"]);
+            try {
+                const response = await fetch("http://localhost:3000/travel");
+                const data = await response.json();
+                this.destinations = data["transport"];
+    
+                let uniqueDestinationsFilter = [];
+                for (let i = 0; i < this.destinations.length; i++) {
+                    uniqueDestinationsFilter.push(this.destinations[i]["city"]);
+                }
+                this.uniqueDestinations = this.removeDuplicateDestinations(uniqueDestinationsFilter);
+            } catch (error) {
+                console.log("Erro ao buscar dados: " + error);
             }
-            this.uniqueDestinations = this.removeDuplicateDestinations(uniqueDestinationsFilter);
         },
         removeDuplicateDestinations(arr) {
             let uniqueArray = [];
@@ -32,25 +36,22 @@ const app = Vue.createApp({
             }
             return uniqueArray;
         },
-        showDestinations() {
-            document.querySelector(".destinationOptionsBox").style.display = "flex";
-        },
         selectDestination(destination) {
             this.selectedDestination = destination;
-            this.closeDestinations();
-        },
-        closeDestinations() {
-            document.querySelector(".destinationOptionsBox").style.display = "none";
+            this.closeDiv("destinationOptionsBox");
         },
         verifyFields() {
             if (this.selectedDate && this.selectedDestination != "") {
                 this.createBestTravels();
             } else {
-                document.querySelector("dialog").style.display = "flex";
+                this.showDiv("errorDialog");
             }
         },
-        closeDialog() {
-            document.querySelector("dialog").style.display = "none";
+        showDiv(div){
+            document.querySelector(`.${div}`).style.display = "flex";
+        },
+        closeDiv(div) {
+            document.querySelector(`.${div}`).style.display = "none";
         },
         createBestTravels() {
             const possibleTravelOptions = this.destinations.filter(destination => destination.city === this.selectedDestination);
@@ -68,7 +69,7 @@ const app = Vue.createApp({
     },
     mounted: function () {
         this.getData();
-        this.closeDestinations();
+        this.closeDiv("destinationOptionsBox");
     }
 });
 

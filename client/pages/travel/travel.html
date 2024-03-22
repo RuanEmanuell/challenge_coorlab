@@ -9,12 +9,12 @@
     <title>Coorlab Challenge</title>
 </head>
 
-<body>
-    <nav class="mobileMenu">
-        <img src="../../images/logo.png" class="mobileMenuLogo">
-        <img src="../../images/menu.png" class="mobileMenuOpener">
+<body id="app">
+    <nav class="mobileNavbar" @click="showDiv('mobileDialog')">
+        <img src="../../images/logo.png" class="mobileNavbarLogo">
+        <img src="../../images/menu.png" class="mobileNavbarOpener">
     </nav>
-    <div class="container" id="app">
+    <div class="container">
         <nav class="lateralMenu">
             <img src="../../images/logo.png" class="logoImg">
             <div class="option">
@@ -35,21 +35,21 @@
                             <h4>Calcule o valor da Viagem</h4>
                         </div>
                         <label>Destino</label>
-                        <div class="destinationSelect" @click="showDestinations()">
+                        <div class="destinationSelect" @click="showDiv('destinationOptionsBox')">
                             <p>{{selectedDestination != "" ? selectedDestination : "Selecione um destino"}}</p>
                             <p>></p>
                         </div>
                         <div class="destinationOptionsBox">
                             <div class="destinationOption" v-for="destination in uniqueDestinations"
                                 @click="selectDestination(destination)">
-                                <h4>{{destination}}</h4>
+                                <p>● {{destination}}</p>
                             </div>
                         </div>
                         <label>Data</label>
                         <input type="date" v-model="selectedDate">
                         <standart-button button-label="Buscar" @click="verifyFields()"></standart-button>
                     </div>
-                    <div class="travelResults" @click="closeDestinations()">
+                    <div class="travelResults" @click="closeDiv('destinationOptionsBox')">
                         <template v-if="!bestTravelC && !bestTravelE">
                             <h1 class="noData">Nenhum dado selecionado</h1>
                         </template>
@@ -94,11 +94,19 @@
                 </section>
             </div>
         </main>
-        <dialog>
+        <dialog class="errorDialog">
             <div class="insertValuesMessageBox">
                 <img src="../../images/exclamation.png">
                 <h1>Insira os valores para realizar a cotação.</h1>
-                <standart-button button-label="Fechar" @click="closeDialog()"></standart-button>
+                <standart-button button-label="Fechar" @click="closeDiv('errorDialog')"></standart-button>
+            </div>
+        </dialog>
+        <dialog class="mobileDialog" @click="closeDiv('mobileDialog')">
+            <div class="mobileMenuBox">
+                <div class="menuOption">
+                    <img src="../../images/calculator.png">
+                    <h4 class="label">Calculadora de Viagem</h4>
+                </div>
             </div>
         </dialog>
     </div>
