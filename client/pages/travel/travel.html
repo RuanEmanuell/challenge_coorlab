@@ -10,109 +10,111 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@3.2.20"></script>
 </head>
 
-<body id="app">
-    <nav class="mobileNavbar" @click="showDiv('mobileDialog')">
-        <img src="../../images/logo.png" class="mobileNavbarLogo">
-        <img src="../../images/menu.png" class="mobileNavbarOpener">
-    </nav>
-    <div class="container">
-        <nav class="lateralMenu">
-            <img src="../../images/logo.png" class="logoImg">
-            <div class="option">
-                <img src="../../images/calculator.png">
-                <h4 class="label">Calculadora de Viagem</h4>
-            </div>
+<body>
+    <section id="app" class="travelContainer">
+        <nav class="mobileNavbar" @click="showDiv('mobileDialog')">
+            <img src="../../images/logo.png" class="mobileNavbarLogo">
+            <img src="../../images/menu.png" class="mobileNavbarOpener">
         </nav>
-        <main class="travelCalculatorBox">
-            <div class="travelCalculator">
-                <div class="travelTitle">
-                    <img src="../../images/truck.png" class="icon">
-                    <h3 class="title">Calculadora de Viagem</h4>
-                </div>
-                <section class="travelSelectorBox">
-                    <div class="travelValues">
-                        <div class="calculateTravelTitle">
-                            <img src="../../images//hand.svg" class="icon travelBoxIcon">
-                            <h4>Calcule o valor da Viagem</h4>
-                        </div>
-                        <label>Destino</label>
-                        <div class="destinationSelect" @click="showDiv('destinationOptionsBox')">
-                            <p>{{selectedDestination != "" ? selectedDestination : "Selecione um destino"}}</p>
-                            <p>></p>
-                        </div>
-                        <div class="destinationOptionsBox">
-                            <div class="destinationOption" v-for="destination in uniqueDestinations"
-                                @click="selectDestination(destination)">
-                                <p>● {{destination}}</p>
-                            </div>
-                        </div>
-                        <label>Data</label>
-                        <input type="date" v-model="selectedDate">
-                        <standart-button button-label="Buscar" @click="verifyFields()"></standart-button>
-                    </div>
-                    <div class="travelResults" @click="closeDiv('destinationOptionsBox')">
-                        <template v-if="!bestTravelC && !bestTravelE">
-                            <h1 class="noData">Nenhum dado selecionado</h1>
-                        </template>
-                        <template v-else>
-                            <div class="travelOptionsBox">
-                                <p>Estas são as melhores alternativas de viagem para a data selecionada</p>
-                                <div class="travelOptions">
-                                    <div class="travelOption">
-                                        <div class="travelOptionImgBox">
-                                            <img src="../../images/hand.svg">
-                                        </div>
-                                        <section>
-                                            <h4>{{bestTravelC.name}}</h4>
-                                            <p>Leito: {{bestTravelC.bed}} (completo)</p>
-                                            <p>Tempo estimado: {{bestTravelC.duration}}</p>
-                                        </section>
-                                        <section>
-                                            <h4>Preço</h4>
-                                            <p>{{bestTravelC.price_confort}}</p>
-                                        </section>
-                                    </div>
-                                    <div class="travelOption">
-                                        <div class="travelOptionImgBox">
-                                            <img src="../../images/hour.svg">
-                                        </div>
-                                        <section>
-                                            <h4>{{bestTravelE.name}}</h4>
-                                            <p>Poltrona: {{bestTravelE.seat}} (convencional)</p>
-                                            <p>Tempo estimado: {{bestTravelE.duration}}</p>
-                                        </section>
-                                        <section>
-                                            <h4>Preço</h4>
-                                            <p>{{bestTravelE.price_econ}}</p>
-                                        </section>
-                                    </div>
-                                    <standart-button button-label="Limpar" button-color="#f0a335"
-                                        @click="clearAllValues()"></standart-button>
-                                </div>
-                            </div>
-                        </template>
-                    </div>
-                </section>
-            </div>
-        </main>
-        <dialog class="errorDialog">
-            <div class="insertValuesMessageBox">
-                <img src="../../images/exclamation.png">
-                <h1>Insira os valores para realizar a cotação.</h1>
-                <standart-button button-label="Fechar" @click="closeDiv('errorDialog')"></standart-button>
-            </div>
-        </dialog>
-        <dialog class="mobileDialog" @click="closeDiv('mobileDialog')">
-            <div class="mobileMenuBox">
-                <div class="menuOption">
+        <div class="container">
+            <nav class="lateralMenu">
+                <img src="../../images/logo.png" class="logoImg">
+                <div class="option">
                     <img src="../../images/calculator.png">
                     <h4 class="label">Calculadora de Viagem</h4>
                 </div>
-            </div>
-        </dialog>
-    </div>
-
-    <script type="module" src="travel.js"></script>
+            </nav>
+            <main class="travelCalculatorBox">
+                <div class="travelCalculator">
+                    <div class="travelTitle">
+                        <img src="../../images/truck.png" class="icon">
+                        <h3 class="title">Calculadora de Viagem</h3>
+                    </div>
+                    <section class="travelSelectorBox">
+                        <div class="travelValues">
+                            <div class="calculateTravelTitle">
+                                <img src="../../images//hand.svg" class="icon travelBoxIcon">
+                                <h4>Calcule o valor da Viagem</h4>
+                            </div>
+                            <label>Destino</label>
+                            <div class="destinationSelect" @click="showDiv('destinationOptionsBox')">
+                                <p>{{selectedDestination != "" ? selectedDestination : "Selecione um destino"}}</p>
+                                <p>></p>
+                            </div>
+                            <div class="destinationOptionsBox">
+                                <div class="destinationOption" v-for="destination in uniqueDestinations"
+                                    @click="selectDestination(destination)">
+                                    <p>● {{destination}}</p>
+                                </div>
+                            </div>
+                            <label>Data</label>
+                            <input type="date" v-model="selectedDate">
+                            <standart-button button-label="Buscar" @click="verifyFields()"></standart-button>
+                        </div>
+                        <div class="travelResults" @click="closeDiv('destinationOptionsBox')">
+                            <template v-if="!bestTravelC && !bestTravelE">
+                                <h1 class="noData">Nenhum dado selecionado</h1>
+                            </template>
+                            <template v-else>
+                                <div class="travelOptionsBox">
+                                    <p>Estas são as melhores alternativas de viagem para a data selecionada</p>
+                                    <div class="travelOptions">
+                                        <div class="travelOption">
+                                            <div class="travelOptionImgBox">
+                                                <img src="../../images/hand.svg">
+                                            </div>
+                                            <section>
+                                                <h4>{{bestTravelC.name}}</h4>
+                                                <p>Leito: {{bestTravelC.bed}} (completo)</p>
+                                                <p>Tempo estimado: {{bestTravelC.duration}}</p>
+                                            </section>
+                                            <section>
+                                                <h4>Preço</h4>
+                                                <p>{{bestTravelC.price_confort}}</p>
+                                            </section>
+                                        </div>
+                                        <div class="travelOption">
+                                            <div class="travelOptionImgBox">
+                                                <img src="../../images/hour.svg">
+                                            </div>
+                                            <section>
+                                                <h4>{{bestTravelE.name}}</h4>
+                                                <p>Poltrona: {{bestTravelE.seat}} (convencional)</p>
+                                                <p>Tempo estimado: {{bestTravelE.duration}}</p>
+                                            </section>
+                                            <section>
+                                                <h4>Preço</h4>
+                                                <p>{{bestTravelE.price_econ}}</p>
+                                            </section>
+                                        </div>
+                                        <standart-button button-label="Limpar" button-color="#f0a335"
+                                            @click="clearAllValues()"></standart-button>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </section>
+                </div>
+            </main>
+            <dialog class="errorDialog">
+                <div class="insertValuesMessageBox">
+                    <img src="../../images/exclamation.png">
+                    <h1>Insira os valores para realizar a cotação.</h1>
+                    <standart-button button-label="Fechar" @click="closeDiv('errorDialog')"></standart-button>
+                </div>
+            </dialog>
+            <dialog class="mobileDialog" @click="closeDiv('mobileDialog')">
+                <div class="mobileMenuBox">
+                    <div class="menuOption">
+                        <img src="../../images/calculator.png">
+                        <h4 class="label">Calculadora de Viagem</h4>
+                    </div>
+                </div>
+            </dialog>
+        </div>
+    </section>
+    <script src="../../utils/components.js" type="module"></script>
+    <script src="travel.js" type="module"></script>
 </body>
 
 </html>

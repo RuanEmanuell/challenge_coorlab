@@ -1,2 +1,5 @@
 docs/
-server/__pycache__/
+server/__pycache__
+server/files/__pycache__
+server/data/__pycache__
+*pyc

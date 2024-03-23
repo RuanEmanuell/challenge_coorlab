@@ -17,7 +17,7 @@ const app = Vue.createApp({
                 const response = await fetch("http://localhost:3000/travel");
                 const data = await response.json();
                 this.destinations = data["transport"];
-    
+
                 let uniqueDestinationsFilter = [];
                 for (let i = 0; i < this.destinations.length; i++) {
                     uniqueDestinationsFilter.push(this.destinations[i]["city"]);
@@ -47,7 +47,7 @@ const app = Vue.createApp({
                 this.showDiv("errorDialog");
             }
         },
-        showDiv(div){
+        showDiv(div) {
             document.querySelector(`.${div}`).style.display = "flex";
         },
         closeDiv(div) {
