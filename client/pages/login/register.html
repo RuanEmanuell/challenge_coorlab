@@ -21,12 +21,13 @@
             <input type="password" v-model="password" placeholder="Digite sua senha..."></input>
             <label>Confirmar sua senha</label>
             <input type="password" v-model="confirmPassword" placeholder="Digite sua senha novamente..."></input>
-            <button class="standartButton" @click="sendToHomePage()">Criar conta</button>
+            <standart-button button-label="Criar conta" @click="testingValues()"></standart-button>
             <a href="index.html" class="subtitle">Já tem uma conta? Fazer login</a>
         </form>
     </div>
 
-    <script src="login.js"></script>
+    <script src="../../utils/components.js" type="module" ></script>
+    <script src="login.js" type="module"></script>
 </body>
 
 </html>

@@ -191,10 +191,6 @@ input {
     margin: 10px;
 }
 
-.travelOptionsBox button{
-    background-color: #f0a335;
-}
-
 .travelOptions {
     margin: 10px;
     display: grid;

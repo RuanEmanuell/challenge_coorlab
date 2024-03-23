@@ -19,12 +19,13 @@
             <input type="email" v-model="email" placeholder="Digite seu email..."></input>
             <label>Senha</label>
             <input type="password" v-model="password" placeholder="Digite sua senha..."></input>
-            <button class="standartButton" @click="sendToHomePage()">Fazer login</button>
+            <standart-button button-label="Fazer Login" @click="testingValues()"></standart-button>
             <a href="register.html" class="subtitle">Ainda não tem uma conta? Criar uma conta</a>
         </form>
     </div>
-    
-    <script src="login.js"></script>
+
+    <script src="../../utils/components.js" type="module"></script>
+    <script src="login.js" type="module"></script>
 </body>
 
 </html>
