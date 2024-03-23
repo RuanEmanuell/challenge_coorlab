@@ -8,8 +8,6 @@ Eu comecei fazendo a tela de login, visto que ela era citada na história propos
 
 Já na tela principal, ao entrar nela é rodado uma função para capturar os dados da API, retornando todos os dados das viagens. Como tinham viagens com destinos iguais, na interface apareciam nomes repetidos, então há uma função para filtrar esses nomes e mostrar apenas um de cada tipo. Com a opção e a data selecionada o usuário pode prosseguir, e então ao clicar no botão de buscar é rodada uma função que filtra dentre as viagens aquela que tem o destino que o usuário buscou. Como a idéia é mostrar uma opção mais rápida e mais confortável e outra mais econômica, a primeira é filtrada baseada na menor duração de viagem, tendo como base o preço da passagem de nível confortável, em quanto na outra o filtro é por preço com base na mais barata (que geralmente também tem duração maior). Há também um botão de limpar que reseta os valores necessários pro seus estados iniciais.
 
-Eu também criei um componente de botão personalizado, visto que ele era usado em todas as 3 telas.
-
 ![vue_html](https://github.com/RuanEmanuell/devblog/assets/113607857/736180d1-ebe8-4c02-b76e-5dfd2218a334)
 
 ## Back-End (Python com Flask)
@@ -46,8 +44,6 @@ In the front end, VueJS 3 was used, imported as a CDN since the idea was to buil
 I started by creating the login screen, as it was mentioned in the proposed story, but there is no user authentication or similar features. When clicking the button on both the registration and login screens, you are directly redirected to the main screen.
 
 On the main screen, upon entering it, a function is executed to fetch data from the API, returning all trip data. Since there were trips with identical destinations, duplicate names appeared in the interface, so there is a function to filter these names and show only one of each type. With the option and selected date, the user can proceed, and then when clicking the search button, a function is executed to filter among the trips the one with the destination the user searched for. As the idea is to show one option that is faster and more comfortable and another that is more economical, the first is filtered based on the shortest trip duration, based on the price of the comfortable level ticket, while the other is filtered by price based on the cheapest option (which usually also has a longer duration). There is also a clear button that resets the values necessary to their initial states.
-
-I also created a custom button component, as it was used on all 3 screens.
 
 ![vue_html](https://github.com/RuanEmanuell/devblog/assets/113607857/736180d1-ebe8-4c02-b76e-5dfd2218a334)
 

@@ -1,5 +1,3 @@
-import { StandardButton } from '../../utils/components.js';
-
 const app = Vue.createApp({
     data() {
         return {
@@ -9,7 +7,7 @@ const app = Vue.createApp({
         };
     },
     methods: {
-        testingValues() {
+        sendToHomePage() {
             document.location.href = "../travel/travel.html";
         },
         preventPageReload() {
@@ -22,7 +20,5 @@ const app = Vue.createApp({
         this.preventPageReload();
     }
 });
-
-app.component('standart-button', StandardButton);
 
 app.mount('#app');

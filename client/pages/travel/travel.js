@@ -1,5 +1,3 @@
-import { StandardButton } from '../../utils/components.js';
-
 const app = Vue.createApp({
     data() {
         return {
@@ -72,7 +70,5 @@ const app = Vue.createApp({
         this.closeDiv("destinationOptionsBox");
     }
 });
-
-app.component('standart-button', StandardButton);
 
 app.mount('#app');

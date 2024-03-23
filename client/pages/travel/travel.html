@@ -49,7 +49,7 @@
                             </div>
                             <label>Data</label>
                             <input type="date" v-model="selectedDate">
-                            <standart-button button-label="Buscar" @click="verifyFields()"></standart-button>
+                            <button class="standartButton" @click="verifyFields()">Buscar</button>
                         </div>
                         <div class="travelResults" @click="closeDiv('destinationOptionsBox')">
                             <template v-if="!bestTravelC && !bestTravelE">
@@ -87,8 +87,7 @@
                                                 <p>{{bestTravelE.price_econ}}</p>
                                             </section>
                                         </div>
-                                        <standart-button button-label="Limpar" button-color="#f0a335"
-                                            @click="clearAllValues()"></standart-button>
+                                        <button class="standartButton" @click="clearAllValues">Limpar</button>
                                     </div>
                                 </div>
                             </template>
@@ -100,7 +99,7 @@
                 <div class="insertValuesMessageBox">
                     <img src="../../images/exclamation.png">
                     <h1>Insira os valores para realizar a cotação.</h1>
-                    <standart-button button-label="Fechar" @click="closeDiv('errorDialog')"></standart-button>
+                    <button class="standartButton" @click="closeDiv('errorDialog')">Fechar</button>
                 </div>
             </dialog>
             <dialog class="mobileDialog" @click="closeDiv('mobileDialog')">
@@ -113,8 +112,7 @@
             </dialog>
         </div>
     </section>
-    <script src="../../utils/components.js" type="module"></script>
-    <script src="travel.js" type="module"></script>
+    <script src="travel.js"></script>
 </body>
 
 </html>
